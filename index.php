@@ -1,37 +1,74 @@
-<?php 
-
-if(is_404(  )) { // 
-  get_header('special'); // заголовок сайта
-} else {
-  get_header(); // заголовок сайта
-}
-
-if(have_posts(  )) : // проверка на наличие постов
-  while(have_posts(  )) : the_post(  ); // перебор постов
-    if(has_post_thumbnail()) { // если есть миниатюра
-      the_post_thumbnail(); // миниатюра
-    }
-    if(function_exists('the_custom_logo') && 'has_custom_logo') { // если есть логотип 
-      the_custom_logo(); // логотип
-    } else {
-      echo '<h1>' . get_bloginfo('name') . '</h1>';
-    }
-    the_title('<h1>', '</h1>'); // заголовок поста
-    the_content(); // содержание поста
-    if(is_single(  )) { // если это один пост
-      the_author(); // автор поста
-      the_time( ); // дата создания поста
-    } else if(is_home(  )) { // если это главная страница
-      echo 'Да, это is_home()'; // сообщение о главной странице
-    }
-  endwhile;
-else:
-  _e('Sorry, no posts matched your criteria.', 'yg1'); // сообщение об отсутствии постов
-endif;
-
-get_template_part('template-parts/header/top'); // шапка
-get_search_form(); // форма поиска
-get_sidebar(); // сайдбар
-get_footer(); // подвал
-?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1 class="header_title">Digital Marketing Agency</h1>
+      <p class="header_text">Award winning digital marketing agency in Singapore. A home-grown company since 2018.</p>
+      <button class="header_button">Find out more</button>
+    </div>
+  </header>
+  <!-- Services -->
+  <section class="services">
+    <div class="container">
+      <div class="block">
+        <h2 class="block_title">Our services</h2>
+        <p class="block_text">Increase your insight and make the better experience with our valuable services.</p>
+      </div>
+      <div class="services_items">
+        <div class="services_item">
+          <img class="services_img" src="img/play-list-search.svg" alt="Search Engine Optimization">
+          <h3 class="services_title">Search Engine Optimization</h3>
+        </div>
+        <div class="services_item">
+          <img class="services_img" src="img/instagram.svg" alt="Social Media Optimization">
+          <h3 class="services_title">Social Media Optimization</h3>
+        </div>
+        <div class="services_item">
+          <img class="services_img" src="img/pen.svg" alt="UX Writer">
+          <h3 class="services_title">UX Writer</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Team -->
+  <section class="team">
+    <div class="container">
+      <div class="block">
+        <h2 class="block_title">Our talanted mamber</h2>
+        <p class="block_text">Increase your insight and make the better experience with our valuable services.</p>
+      </div>
+      <div class="team_items">
+        <div class="team_item">
+          <img class="team_img" src="img/team1.png" alt="Sarah Gilbert">
+          <div class="team_block">
+            <h4 class="team_title">Sarah Gilbert</h4>
+            <p class="team_text">CEO & Founder DigiXine</p>
+          </div> 
+        </div>
+        <div class="team_item">
+          <img class="team_img" src="img/team2.png" alt="Stephen Joe">
+          <div class="team_block">
+            <h4 class="team_title">Stephen Joe</h4>
+            <p class="team_text">Social Media Manager</p>
+          </div> 
+        </div>
+        <div class="team_item">
+          <img class="team_img" src="img/team3.png" alt="Danie Rogue">
+          <div class="team_block">
+            <h4 class="team_title">Danie Rogue</h4>
+            <p class="team_text">Senior UX Writer</p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
