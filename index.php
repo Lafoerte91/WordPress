@@ -1,4 +1,8 @@
-  <?php get_header(); ?>
+  <?php
+  /*
+  Template Name: Главная
+  */
+  get_header(); ?>
   <!-- Services -->
   <section class="services">
     <div class="container">
