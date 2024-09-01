@@ -15,7 +15,7 @@
   <?php wp_head(); ?>
 </head>
 <body>
-  <header class="header">
+  <header class="header" style="bg-image: url(<?php echo CFS()->get('header_bg'); ?>)">
     <div class="container">
       <a href="<?php echo home_url(); ?>">Home</a>
       <h1 class="header_title"><?php echo CFS()->get('header_title'); ?></h1>
