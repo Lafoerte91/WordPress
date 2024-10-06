@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-  <?php
-    if(is_404()) {
-      echo 'Ошибка 404';
-    } else {
-      the_title();
-    }
-  ?>
+  <?php the_title(); ?>
   </title>
   <?php wp_head(); ?>
 </head>
